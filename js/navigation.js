@@ -3,6 +3,7 @@
 var adminurl = "http://chaitalee.com/";
 var imgurl = "http://146.148.4.222/upload/";
 var imgpath = adminurl + "upload/readFile";
+var uploadurl = adminurl + "upload/";
 // var adminurl = "http://pantherworldadmin.jaipurpinkpanthers.com/";
 // var imgurl = "http://pantherworldadmin.jaipurpinkpanthers.com/upload/";
 // var imgpath = imgurl + "readFile";
