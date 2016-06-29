@@ -1,6 +1,6 @@
 {
     "title": "Create User",
-    "jsonPage": "userView",
+    "jsonPage": "viewExpert",
     "desciption": "",
     "pageType": "create",
     "fields": [{
@@ -69,11 +69,11 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'userView'})"
+        "stateName": "page({jsonName:'viewExpert'})"
     }],
 
     "apiCall": {
-        "url": "user/saveData"
+        "url": "expertuser/saveData"
     },
 
     "sidemenu": [{

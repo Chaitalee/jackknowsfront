@@ -1,0 +1,71 @@
+{
+    "title": "All Booking",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+            "name": "Query",
+            "isSort": "",
+            "tableRef": "query"
+        }, {
+            "name": "CallDuration",
+            "isSort": "",
+            "tableRef": "callDuration"
+        }, {
+            "name": "CallTime",
+            "isSort": "",
+            "tableRef": "callTime",
+            "type":"date"
+        }, {
+            "name": "Status",
+            "isSort": "",
+            "tableRef": "status"
+        }
+
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBooking",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "booking/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete User",
+        "content": "Are you sure you want to delete user?",
+        "api": "booking/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+    "filter": [{
+        "name": "category",
+        "url": "http://chaitalee.com/user/getAll"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+    "apiCall": {
+        "url": "booking/getAll",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createBooking'})"
+}

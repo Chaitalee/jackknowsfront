@@ -2,6 +2,8 @@
 // var adminurl = "http://localhost:1337/";
 var adminurl = "http://chaitalee.com/";
 var imgurl = "http://146.148.4.222/upload/";
+// var adminurl = "http://146.148.4.222/";
+// var imgurl = "http://146.148.4.222/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
 // var adminurl = "http://pantherworldadmin.jaipurpinkpanthers.com/";
@@ -19,6 +21,42 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Category",
     classis: "active",
     link: "#/page/viewCategory",
+    subnav: []
+  },
+  {
+    name: "Newsletter",
+    classis: "active",
+    link: "#/page/viewNewsletter",
+    subnav: []
+  },
+  {
+    name: "Contact",
+    classis: "active",
+    link: "#/page/viewContact",
+    subnav: []
+  },
+  {
+    name: "Testimonial",
+    classis: "active",
+    link: "#/page/viewTestimonial",
+    subnav: []
+  },
+  {
+    name: "Notification",
+    classis: "active",
+    link: "#/page/viewNotification",
+    subnav: []
+  },
+  {
+    name: "Booking",
+    classis: "active",
+    link: "#/page/viewBooking",
+    subnav: []
+  },
+  {
+    name: "Expert",
+    classis: "active",
+    link: "#/page/viewExpert",
     subnav: []
   }
 ];

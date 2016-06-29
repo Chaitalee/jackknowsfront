@@ -80,7 +80,11 @@ firstapp.filter('getValue', function($filter) {
             _.each(keyArr, function(n) {
                 returnValue = returnValue[n];
             });
-            if (type != "image") {
+            console.log(type);
+            if (type == "date") {
+                // return new Date(returnValue);
+                return $filter("date")(returnValue, "medium");
+            } else if (type != "image") {
                 return returnValue;
             } else {
                 return $filter("uploadpath")(returnValue, 100, 100, "fill");

@@ -33,6 +33,13 @@
                     <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
                 </md-select>
             </div>
+            <div ng-if="field.type=='date'">
+
+                              <label>{{field.name}}</label>
+                                <!-- <input ng-model="json.editData[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}"> -->
+                                <!-- <input ng-model="json.editDataTime[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}"> -->
+                            <p ng-bind="json.editData[field.model] | date:'MM/dd/yyyy'"></p>
+                          </div>
             <div ng-if="field.type=='image'">
                 <label for="">Upload Image</label>
                 <!-- <img ng-src="{{field.image|uploadpath}}"> -->

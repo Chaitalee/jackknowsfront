@@ -1,6 +1,6 @@
 {
-    "title": "Edit User",
-    "jsonPage": "userView",
+    "title": "Edit Expert",
+    "jsonPage": "viewExpert",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -47,14 +47,14 @@
     }, {
         "name": "cancel",
         "action": "cancelUser",
-        "stateName": "page({jsonName:'userView'})"
+        "stateName": "page({jsonName:'viewExpert'})"
     }],
     "apiCall": {
-        "url": "user/saveData",
+        "url": "expertuser/saveData",
         "params": "_id"
     },
     "preApi": {
-        "url": "user/getOne",
+        "url": "expertuser/getOne",
         "params": "_id"
     },
     "sidemenu": [{

@@ -108,7 +108,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
 
                 $scope.json.editData = data.data;
-                console.log($scope.json.editData);
+                console.log($scope.json.editData.callTime);
+                $scope.json.editDataTime =
+                    new Date($scope.json.editData.callTime);
+                // $scope.json.editDataTime =
+                //     $filter('date')($scope.json.editData.callTime, 'yyyy-MM-ddTHH:mm:ss.sssZ');
+                console.log($scope.json.editDataTime);
             }, function() {
                 console.log("Fail");
             });
