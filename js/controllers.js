@@ -39,7 +39,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('jsonViewCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
+.controller('jsonViewCtrl', function($scope,$location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -48,7 +48,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonArr = $stateParams.jsonName.split("¢");
     var jsonName = jsonArr[0];
     var urlParams = {};
-
+     $scope.sidemenuVal = $stateParams;
     var jsonParam1 = jsonArr[1];
     var jsonParam2 = jsonArr[2];
     var jsonParam3 = jsonArr[3];
@@ -90,6 +90,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.json = data;
         console.log($scope.json);
+        if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
+            $scope.sidemenuThere = true;
+        }
         if (data.pageType == "create") {
             _.each($scope.json.fields, function(n) {
                 if (n.type == "select") {
@@ -126,6 +129,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "pagenumber": "1",
                 "pagesize": "10"
             };
+            // SIDE MENU DATA
+var urlid1 = $location.absUrl().split('%C2%A2')[1];
+// var urlid2 = $location.absUrl().split('%C2%A2')[2];
+$scope.pagination1 = {};
+if (urlid1) {
+    $scope.api1 = $scope.json.sidemenu[1].callFindOne;
+    if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
+        // ARRAY
+        $scope.pagination1._id = urlid1;
+        NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
+            if (data.data.nominee) {
+                $scope.json.tableData = data.data;
+                console.log("IF");
+                console.log($scope.json.tableData);
+            }
+        }, function() {
+            console.log("fail");
+        });
+    } else {
+        console.log("ELSE");
+        pagination._id = urlid1;
+        NavigationService.sideMenu1($scope.api1, pagination, function(data) {
+            $scope.json.tableData = data.data.data;
+            console.log($scope.json.tableData);
+
+        }, function() {
+            console.log("fail");
+        });
+    }
+}
+// call api for view data
+$scope.apiName = $scope.json.apiCall.url;
+
             NavigationService.findProjects($scope.apiName, pagination, function(data) {
                 $scope.json.tableData = data.data;
                 console.log($scope.json.tableData);
@@ -180,6 +216,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 });
             }
             $scope.confirm(action.title, action.content, pageURL, data);
+        }
+        else if (action.action == 'sidemenuRedirect') {
+           pageURL = action.jsonPage;
+           if (action.fieldsToSend) {
+               _.each(action.fieldsToSend, function(n) {
+                   pageURL += "¢" + jsonArr[n];
+               });
+           }
+           $state.go("page", {
+               jsonName: pageURL
+           });
+       }else if (action.action === 'changeActive') {
+            $scope.defaultActive = action.active;
         }
     };
 

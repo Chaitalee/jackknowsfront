@@ -9,6 +9,10 @@
             <div ng-if="field.type=='hidden'">
                 <input ng-model="json.editData[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}">
             </div>
+            <!-- <div ng-if="field.type=='radio'">
+                <label>{{field.name}}</label>
+              <input type="{{field.type}}" name="{{field.name}}" value="{{fiels.model}}">
+            </div> -->
             <div ng-if="field.type=='text' || field.type=='email'">
                 <label>{{field.name}}</label>
                 <input ng-model="json.editData[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}">

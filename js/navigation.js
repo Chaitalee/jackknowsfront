@@ -88,6 +88,9 @@ var navigationservice = angular.module('navigationservice', [])
       console.log(adminurl+apiName);
       $http.post(adminurl + apiName,urlParams).success(successCallback).error(errorCallback);
     },
+    sideMenu1: function(apiName, pagination, successCallback, errorCallback) {
+         $http.post(adminurl + apiName, pagination).success(successCallback).error(errorCallback);
+       },
     submitLogin: function(data, successCallback, errorCallback) {
       $http.post(adminurl + "user/login", data).success(successCallback).error(errorCallback);
     },
