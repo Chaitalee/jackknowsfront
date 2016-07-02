@@ -2,18 +2,19 @@
     "title": "Experts Education",
     "desciption": "",
     "pageType": "view",
+    "urlFields": ["_id","educationalQualification._id"],
     "fields": [{
             "name": "degreeTitle",
             "isSort": "",
-            "tableRef": "educationalQualification.degreeTitle"
+            "tableRef": "degreeTitle"
         }, {
             "name": "instituteName",
             "isSort": "",
-            "tableRef": "educationalQualification.instituteName"
+            "tableRef": "instituteName"
         }, {
             "name": "yearOfPassing",
             "isSort": "",
-            "tableRef": "educationalQualification.yearOfPassing"
+            "tableRef": "yearOfPassing"
         }
 
     ],
@@ -59,8 +60,23 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getAll",
-        "params": ""
+        "url": "expertuser/getOne",
+        "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createExpert'})"
+    "createButtonState": "page({jsonName:'createExpert'})",
+
+        "sidemenu": [{
+          "name":"Expert Details",
+          "action":"sidemenuRedirect",
+          "jsonPage":"editExpert",
+          "fieldsToSend":[1],
+          "callFindOne":"expertuser/getOne"
+        },
+        {
+          "name":"Educational Qualification",
+          "action":"sidemenuRedirect",
+          "jsonPage":"viewExpertEducation",
+          "fieldsToSend":[1,2],
+          "callFindOne":"expertuser/getOneEducationQualification"
+        }]
 }

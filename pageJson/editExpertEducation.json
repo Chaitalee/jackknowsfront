@@ -72,7 +72,7 @@
         "params": "_id"
     },
     "preApi": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getOneEducationQualification",
         "params": "_id"
     },
 
@@ -81,14 +81,14 @@
       "action":"sidemenuRedirect",
       "jsonPage":"editExpertEducation",
       "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
+      "callFindOne":"expertuser/getOneEducationQualification"
     },
     {
       "name":"Educational Qualification",
       "action":"sidemenuRedirect",
       "jsonPage":"viewFundsPrice",
       "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
+      "callFindOne":"expertuser/getOneEducationQualification"
     }]
 
 }

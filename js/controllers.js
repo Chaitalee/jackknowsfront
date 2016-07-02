@@ -83,6 +83,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         _.each(data.urlFields, function(n, key) {
+          console.log(n);
+          console.log(key);
             urlParams[n] = jsonArr[key + 1];
         });
         console.log(urlParams);
@@ -107,16 +109,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
 
         } else if (data.pageType == "edit") {
+          console.log("Edit");
+          // $scope.json.editData.educationalQualification=[];
             console.log(urlParams);
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
 
                 $scope.json.editData = data.data;
-                console.log($scope.json.editData.callTime);
-                $scope.json.editDataTime =
-                    new Date($scope.json.editData.callTime);
+                console.log($scope.json.editData);
+                // console.log('.educationalQualification',$scope.json.editData.educationalQualification);
+                // $scope.json.editDataTime =
+                //     new Date($scope.json.editData.callTime);
                 // $scope.json.editDataTime =
                 //     $filter('date')($scope.json.editData.callTime, 'yyyy-MM-ddTHH:mm:ss.sssZ');
-                console.log($scope.json.editDataTime);
+                // console.log($scope.json.editDataTime);
             }, function() {
                 console.log("Fail");
             });
@@ -131,9 +136,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             // SIDE MENU DATA
 var urlid1 = $location.absUrl().split('%C2%A2')[1];
+console.log(urlid1);
 // var urlid2 = $location.absUrl().split('%C2%A2')[2];
 $scope.pagination1 = {};
 if (urlid1) {
+  console.log($scope.json);
     $scope.api1 = $scope.json.sidemenu[1].callFindOne;
     if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
         // ARRAY
