@@ -1,20 +1,32 @@
 {
-    "title": "Experts Education",
+    "title": "Experts Experience",
     "desciption": "",
     "pageType": "view",
-    "urlFields": ["_id"],
+    "urlFields": ["_id","experience._id"],
     "fields": [{
-            "name": "degreeTitle",
+            "name": "Experience Type",
             "isSort": "",
-            "tableRef": "degreeTitle"
+            "tableRef": "experienceType"
         }, {
-            "name": "instituteName",
+            "name": "Company Name",
             "isSort": "",
-            "tableRef": "instituteName"
+            "tableRef": "companyName"
         }, {
-            "name": "yearOfPassing",
+            "name": "Job Title",
             "isSort": "",
-            "tableRef": "yearOfPassing"
+            "tableRef": "jobTitle"
+        }, {
+            "name": "Job Description",
+            "isSort": "",
+            "tableRef": "jobDescription"
+        }, {
+            "name": "Start Date",
+            "isSort": "",
+            "tableRef": "startDate"
+        }, {
+            "name": "End Date",
+            "isSort": "",
+            "tableRef": "endDate"
         }
 
     ],
@@ -33,7 +45,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/deleteEdu",
+        "api": "expertuser/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"

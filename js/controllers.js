@@ -259,7 +259,7 @@ $scope.apiName = $scope.json.apiCall.url;
         // CALL GENERAL API
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
 
-            console.log($scope.json.jsonPage);
+            console.log($scope.json.jsonPage);  
 
             // showToast("Project Saved Successfully");
             console.log("Success");

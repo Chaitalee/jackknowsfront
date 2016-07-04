@@ -9,7 +9,8 @@
         }, {
             "name": "Timestamp",
             "isSort": "",
-            "tableRef": "timestamp"
+            "tableRef": "timestamp",
+            "type":"date"
         }, {
             "name": "Status",
             "isSort": "",

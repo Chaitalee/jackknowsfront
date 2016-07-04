@@ -1,22 +1,25 @@
 {
-    "title": "Experts Education",
+    "title": "Experts Call Settings",
     "desciption": "",
     "pageType": "view",
-    "urlFields": ["_id"],
+    "urlFields": ["_id","awards._id"],
     "fields": [{
-            "name": "degreeTitle",
+            "name": "Call Type",
             "isSort": "",
-            "tableRef": "degreeTitle"
-        }, {
-            "name": "instituteName",
+            "tableRef": "callTime"
+        },{
+            "name": "Day",
             "isSort": "",
-            "tableRef": "instituteName"
-        }, {
-            "name": "yearOfPassing",
+            "tableRef": "day"
+        },{
+            "name": "From Time",
             "isSort": "",
-            "tableRef": "yearOfPassing"
+            "tableRef": "fromTime"
+        },{
+            "name": "To Time",
+            "isSort": "",
+            "tableRef": "toTime"
         }
-
     ],
     "action": [{
         "name": "edit",
@@ -33,7 +36,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/deleteEdu",
+        "api": "expertuser/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"

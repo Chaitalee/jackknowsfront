@@ -1,22 +1,17 @@
 {
-    "title": "Experts Education",
+    "title": "Experts Awards",
     "desciption": "",
     "pageType": "view",
-    "urlFields": ["_id"],
+    "urlFields": ["_id","awards._id"],
     "fields": [{
-            "name": "degreeTitle",
+            "name": "Id",
             "isSort": "",
-            "tableRef": "degreeTitle"
-        }, {
-            "name": "instituteName",
+            "tableRef": "_id"
+        },{
+            "name": "Awards And Honors",
             "isSort": "",
-            "tableRef": "instituteName"
-        }, {
-            "name": "yearOfPassing",
-            "isSort": "",
-            "tableRef": "yearOfPassing"
+            "tableRef": "awardsandhonors"
         }
-
     ],
     "action": [{
         "name": "edit",
@@ -33,7 +28,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/deleteEdu",
+        "api": "expertuser/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"

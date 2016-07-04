@@ -1,6 +1,6 @@
 {
     "title": "Edit Expert Education",
-    "jsonPage": "viewExpertEducation",
+    "jsonPage": "viewExpert",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -65,7 +65,7 @@
     }, {
         "name": "cancel",
         "action": "cancelUser",
-        "stateName": "page({jsonName:'viewExpertEducation'})"
+        "stateName": "page({jsonName:'viewExpert'})"
     }],
     "apiCall": {
         "url": "expertuser/saveEducationQualification",
@@ -74,21 +74,6 @@
     "preApi": {
         "url": "expertuser/getOneEducationQualification",
         "params": "_id"
-    },
-
-    "sidemenu": [{
-      "name":"Expert Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editExpertEducation",
-      "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
-    },
-    {
-      "name":"Educational Qualification",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewFundsPrice",
-      "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
-    }]
+    }
 
 }
