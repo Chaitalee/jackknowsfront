@@ -4,43 +4,61 @@
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "country",
+        "name": "Experience Type",
         "type": "text",
-        "tableRef": "country",
-        "placeholder": "Enter Country",
+        "tableRef": "experienceType",
+        "placeholder": "Enter experience Type",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "city",
+        "name": "Company Name",
         "type": "text",
-        "tableRef": "city",
-        "placeholder": "Enter City",
+        "tableRef": "companyName",
+        "placeholder": "Enter Company Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "yearOfPassing",
+        "name": "Job Title",
         "type": "text",
-        "tableRef": "yearOfPassing",
-        "placeholder": "Enter Year Of Passing",
+        "tableRef": "jobTitle",
+        "placeholder": "Enter job Title",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
 
     }, {
-        "name": "instituteName",
+        "name": "Job Description",
         "type": "text",
-        "tableRef": "instituteName",
-        "placeholder": "Enter Institute Name",
+        "tableRef": "jobDescription",
+        "placeholder": "Enter Job Description",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "degreeTitle",
+        "name": "Start Date",
         "type": "text",
-        "tableRef": "degreeTitle",
-        "placeholder": "Enter Degree Title",
+        "tableRef": "startDate",
+        "placeholder": "Enter Start Date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+
+    }, {
+        "name": "End Date",
+        "type": "text",
+        "tableRef": "endDate",
+        "placeholder": "Enter End Date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+
+    }, {
+        "name": "Image",
+        "type": "text",
+        "tableRef": "image1",
+        "placeholder": "Enter Image",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -55,7 +73,7 @@
     }],
 
     "apiCall": {
-        "url": "expertuser/saveEducationQualification"
+        "url": "expertuser/saveExperience"
     },
 
     "sidemenu": [{
