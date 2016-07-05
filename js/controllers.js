@@ -39,7 +39,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('jsonViewCtrl', function($scope,$location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
+.controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -48,7 +48,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonArr = $stateParams.jsonName.split("¢");
     var jsonName = jsonArr[0];
     var urlParams = {};
-     $scope.sidemenuVal = $stateParams;
+    $scope.sidemenuVal = $stateParams;
     var jsonParam1 = jsonArr[1];
     var jsonParam2 = jsonArr[2];
     var jsonParam3 = jsonArr[3];
@@ -83,8 +83,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         _.each(data.urlFields, function(n, key) {
-          console.log(n);
-          console.log(key);
+            console.log(n);
+            console.log(key);
             urlParams[n] = jsonArr[key + 1];
         });
         console.log(urlParams);
@@ -109,8 +109,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
 
         } else if (data.pageType == "edit") {
-          console.log("Edit");
-          // $scope.json.editData.educationalQualification=[];
+            console.log("Edit");
+            // $scope.json.editData.educationalQualification=[];
             console.log(urlParams);
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
 
@@ -135,39 +135,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "pagesize": "10"
             };
             // SIDE MENU DATA
-var urlid1 = $location.absUrl().split('%C2%A2')[1];
-console.log(urlid1);
-// var urlid2 = $location.absUrl().split('%C2%A2')[2];
-$scope.pagination1 = {};
-if (urlid1) {
-  console.log($scope.json);
-    $scope.api1 = $scope.json.sidemenu[1].callFindOne;
-    if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
-        // ARRAY
-        $scope.pagination1._id = urlid1;
-        NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
-            if (data.data.nominee) {
-                $scope.json.tableData = data.data;
-                console.log("IF");
-                console.log($scope.json.tableData);
+            var urlid1 = $location.absUrl().split('%C2%A2')[1];
+            console.log(urlid1);
+            // var urlid2 = $location.absUrl().split('%C2%A2')[2];
+            $scope.pagination1 = {};
+            if (urlid1) {
+                if ($scope.json.sendIdWithCreate) {
+                    $scope.json.createButtonState = $scope.json.createButtonState.split("'" + "})").join("¢" + urlid1 + "'" + "})");
+                    // $scope.json.createButtonState = $scope.json.createButtonState.split("%25C2%").join("%C2%");
+                    // $scope.json.createButtonState = $scope.json.createButtonState.split("%25A2").join("%A2");
+                }
+                console.log($scope.json);
+                $scope.api1 = $scope.json.sidemenu[1].callFindOne;
+                if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
+                    // ARRAY
+                    $scope.pagination1._id = urlid1;
+                    NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
+                        if (data.data.nominee) {
+                            $scope.json.tableData = data.data;
+                            console.log("IF");
+                            console.log($scope.json.tableData);
+                        }
+                    }, function() {
+                        console.log("fail");
+                    });
+                } else {
+                    console.log("ELSE");
+                    pagination._id = urlid1;
+                    NavigationService.sideMenu1($scope.api1, pagination, function(data) {
+                        $scope.json.tableData = data.data.data;
+                        console.log($scope.json.tableData);
+                    }, function() {
+                        console.log("fail");
+                    });
+                }
             }
-        }, function() {
-            console.log("fail");
-        });
-    } else {
-        console.log("ELSE");
-        pagination._id = urlid1;
-        NavigationService.sideMenu1($scope.api1, pagination, function(data) {
-            $scope.json.tableData = data.data.data;
-            console.log($scope.json.tableData);
-
-        }, function() {
-            console.log("fail");
-        });
-    }
-}
-// call api for view data
-$scope.apiName = $scope.json.apiCall.url;
+            // call api for view data
+            $scope.apiName = $scope.json.apiCall.url;
 
             NavigationService.findProjects($scope.apiName, pagination, function(data) {
                 $scope.json.tableData = data.data;
@@ -223,18 +227,17 @@ $scope.apiName = $scope.json.apiCall.url;
                 });
             }
             $scope.confirm(action.title, action.content, pageURL, data);
-        }
-        else if (action.action == 'sidemenuRedirect') {
-           pageURL = action.jsonPage;
-           if (action.fieldsToSend) {
-               _.each(action.fieldsToSend, function(n) {
-                   pageURL += "¢" + jsonArr[n];
-               });
-           }
-           $state.go("page", {
-               jsonName: pageURL
-           });
-       }else if (action.action === 'changeActive') {
+        } else if (action.action == 'sidemenuRedirect') {
+            pageURL = action.jsonPage;
+            if (action.fieldsToSend) {
+                _.each(action.fieldsToSend, function(n) {
+                    pageURL += "¢" + jsonArr[n];
+                });
+            }
+            $state.go("page", {
+                jsonName: pageURL
+            });
+        } else if (action.action === 'changeActive') {
             $scope.defaultActive = action.active;
         }
     };
@@ -242,24 +245,29 @@ $scope.apiName = $scope.json.apiCall.url;
     $scope.makeReadyForApi = function() {
         var data = {};
         if ($scope.json.pageType !== 'edit') {
+            console.log("if");
             // CONVERT MODEL NAMES SAME AS FIELD NAMES
             _.each($scope.json.fields, function(n) {
                 console.log(n);
                 data[n.tableRef] = n.model;
             });
             $scope.formData = data;
+            if (jsonArr[1]) {
+                $scope.formData.user = jsonArr[1];
+            }
             console.log($scope.formData);
         } else {
+            console.log("else");
             $scope.formData = $scope.json.editData;
-            console.log($scope.formData);
         }
 
         $scope.apiName = $scope.json.apiCall.url;
 
         // CALL GENERAL API
+        console.log($scope.formData);
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
 
-            console.log($scope.json.jsonPage);  
+            console.log($scope.json.jsonPage);
 
             // showToast("Project Saved Successfully");
             console.log("Success");

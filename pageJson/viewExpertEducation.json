@@ -2,6 +2,7 @@
     "title": "Experts Education",
     "desciption": "",
     "pageType": "view",
+    "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
             "name": "degreeTitle",
@@ -63,56 +64,54 @@
         "url": "expertuser/getOne",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createExpert'})",
-
-        "sidemenu": [{
-          "name":"Expert Details",
-          "action":"sidemenuRedirect",
-          "jsonPage":"editExpert",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },
-        {
-          "name":"Educational Qualification",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertEducation",
-          "fieldsToSend":[1,2],
-          "callFindOne":"expertuser/getOneEducationQualification"
-        },{
-          "name":"Awards",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertAwards",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Experience",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertExperience",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Call Settings",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertcallSettings",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Video Links",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertvideoLinks",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Publication Links",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertpublicationLinks",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Add Photos",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertaddPhotos",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        }]
+    "createButtonState": "page({jsonName:'createExpertEducation'})",
+    "sidemenu": [{
+        "name": "Expert Details",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editExpert",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Educational Qualification",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertEducation",
+        "fieldsToSend": [1, 2],
+        "callFindOne": "expertuser/getOneEducationQualification"
+    }, {
+        "name": "Awards",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertAwards",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Experience",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertExperience",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Call Settings",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertcallSettings",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Video Links",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertvideoLinks",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Publication Links",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertpublicationLinks",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Add Photos",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertaddPhotos",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }]
 }

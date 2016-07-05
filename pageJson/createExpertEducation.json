@@ -1,0 +1,67 @@
+{
+    "title": "Create Expert Education",
+    "jsonPage": "viewExpert",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter Country",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "city",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "yearOfPassing",
+        "type": "email",
+        "tableRef": "yearOfPassing",
+        "placeholder": "Enter Year Of Passing",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+
+    }, {
+        "name": "instituteName",
+        "type": "text",
+        "tableRef": "instituteName",
+        "placeholder": "Enter Institute Name",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "degreeTitle",
+        "type": "text",
+        "tableRef": "degreeTitle",
+        "placeholder": "Enter Degree Title",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewExpert'})"
+    }],
+
+    "apiCall": {
+        "url": "expertuser/saveEducationQualification"
+    },
+
+    "sidemenu": [{
+        "url": "",
+        "anchor": "",
+        "state": "",
+        "action": ""
+    }]
+}
