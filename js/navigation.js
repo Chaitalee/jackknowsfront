@@ -1,6 +1,7 @@
 // var adminurl = "http://blazen.io/";
 // var adminurl = "http://localhost:1337/";
-var adminurl = "http://chaitalee.com/";
+var adminurl = "http://192.168.1.116/";
+// var adminurl = "http://chaitalee.com/";
 var imgurl = "http://146.148.4.222/upload/";
 // var adminurl = "http://146.148.4.222/";
 // var imgurl = "http://146.148.4.222/upload/";

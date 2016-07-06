@@ -89,19 +89,7 @@
         "jsonPage": "viewExpertExperience",
         "fieldsToSend": [1],
         "callFindOne": "expertuser/getOne"
-    }, {
-        "name": "Call Settings",
-        "action": "sidemenuRedirect",
-        "jsonPage": "viewExpertcallSettings",
-        "fieldsToSend": [1],
-        "callFindOne": "expertuser/getOne"
-    }, {
-        "name": "Video Links",
-        "action": "sidemenuRedirect",
-        "jsonPage": "viewExpertvideoLinks",
-        "fieldsToSend": [1],
-        "callFindOne": "expertuser/getOne"
-    }, {
+    },  {
         "name": "Publication Links",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertpublicationLinks",

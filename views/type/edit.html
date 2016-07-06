@@ -13,7 +13,7 @@
                 <label>{{field.name}}</label>
               <input type="{{field.type}}" name="{{field.name}}" value="{{fiels.model}}">
             </div> -->
-            <div ng-if="field.type=='text' || field.type=='email'">
+            <div ng-if="field.type=='text' || field.type=='email' || field.type=='password'">
                 <label>{{field.name}}</label>
                 <input ng-model="json.editData[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}">
                 <!-- <div ng-messages="name.$error">
@@ -34,16 +34,19 @@
             <div ng-if="field.type=='selectFromTable'">
                 <label>{{field.name}}</label>
                 <md-select ng-model="json.editData[field.model]">
-                    <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
+                    <md-option ng-repeat="item in field.url" value="{{item}}">{{item}}</md-option>
                 </md-select>
             </div>
             <div ng-if="field.type=='date'">
 
-                              <label>{{field.name}}</label>
-                                <!-- <input ng-model="json.editData[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}"> -->
-                                <!-- <input ng-model="json.editDataTime[field.model]" type="{{field.type}}" name="{{field.name}}" id="{{field.id}}"> -->
-                            <p ng-bind="json.editData[field.model] | date:'MM/dd/yyyy'"></p>
-                          </div>
+                <label>{{field.name}}</label>
+                <!-- <p ng-bind="json.editData[field.model] | date:'MM/dd/yyyy'"></p> -->
+                <input type="date" ng-model="json.editData[field.model]">
+            </div>
+            <div ng-if="field.type=='time'">
+                <label>{{field.name}}</label>
+                <input type="time" ng-model="json.editData[field.model]">
+            </div>
             <div ng-if="field.type=='image'">
                 <label for="">Upload Image</label>
                 <!-- <img ng-src="{{field.image|uploadpath}}"> -->

@@ -28,7 +28,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/delete",
+        "api": "expertuser/deleteVideoLinks",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -58,7 +58,7 @@
         "url": "expertuser/getOne",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createExpert'})",
+    "createButtonState": "page({jsonName:'createExpertVideoLinks'})",
 
         "sidemenu": [{
           "name":"Expert Details",
@@ -83,18 +83,6 @@
           "name":"Experience",
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertExperience",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Call Settings",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertcallSettings",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Video Links",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertvideoLinks",
           "fieldsToSend":[1],
           "callFindOne":"expertuser/getOne"
         },{

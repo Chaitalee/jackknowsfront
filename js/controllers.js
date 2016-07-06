@@ -46,6 +46,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     var jsonArr = $stateParams.jsonName.split("¢");
+    console.log($stateParams.jsonName);
     var jsonName = jsonArr[0];
     var urlParams = {};
     $scope.sidemenuVal = $stateParams;
@@ -58,7 +59,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonParam7 = jsonArr[7];
     var jsonParam8 = jsonArr[8];
     var jsonParam9 = jsonArr[9];
-    console.log(jsonArr);
+    console.log(jsonArr[0]);
 
 
 
@@ -115,6 +116,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
 
                 $scope.json.editData = data.data;
+                _.each($scope.json.fields, function(n) {
+                    if (n.type == "time" || n.type == "date") {
+                        $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
+                    }
+                });
                 console.log($scope.json.editData);
                 // console.log('.educationalQualification',$scope.json.editData.educationalQualification);
                 // $scope.json.editDataTime =

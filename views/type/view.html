@@ -97,6 +97,7 @@
         <md-list-item ng-if="json.tableData.callSettings.length>=0" ng-repeat="result in json.tableData.callSettings" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
+                  <!-- <span ng-if="field.type=='time'">{{result|getValue:field.tableRef:field.type}}</span> -->
                 <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>

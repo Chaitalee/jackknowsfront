@@ -2,7 +2,7 @@
     "title": "Experts Call Settings",
     "desciption": "",
     "pageType": "view",
-    "urlFields": ["_id","awards._id"],
+    "urlFields": ["_id"],
     "fields": [{
             "name": "Call Type",
             "isSort": "",
@@ -14,11 +14,13 @@
         },{
             "name": "From Time",
             "isSort": "",
-            "tableRef": "fromTime"
+            "tableRef": "fromTime",
+            "type":"time"
         },{
             "name": "To Time",
             "isSort": "",
-            "tableRef": "toTime"
+            "tableRef": "toTime",
+            "type":"time"
         }
     ],
     "action": [{
@@ -26,7 +28,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editExpertEducation",
+        "jsonPage": "editExpertcallSettings",
         "fieldsToSend": ["_id"],
         "callFindOne": "expertuser/getOne"
     }, {
@@ -36,7 +38,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/delete",
+        "api": "expertuser/deleteCallSettings",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -66,7 +68,7 @@
         "url": "expertuser/getOne",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createExpert'})",
+    "createButtonState": "page({jsonName:'createExpertcallSettings'})",
 
         "sidemenu": [{
           "name":"Expert Details",
@@ -91,18 +93,6 @@
           "name":"Experience",
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertExperience",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Call Settings",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertcallSettings",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Video Links",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertvideoLinks",
           "fieldsToSend":[1],
           "callFindOne":"expertuser/getOne"
         },{

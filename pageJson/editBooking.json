@@ -41,6 +41,33 @@
         "url": "",
         "model": "callTime"
     },{
+        "name": "Call Id",
+        "type": "text",
+        "tableRef": "callId",
+        "placeholder": "Enter Call Id",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "callId"
+    },{
+        "name": "User",
+        "type": "text",
+        "tableRef": "user",
+        "placeholder": "Enter User",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "user"
+    },{
+        "name": "expert",
+        "type": "text",
+        "tableRef": "expert",
+        "placeholder": "Enter Expert",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "expert"
+    },{
         "name": "Status",
         "type": "text",
         "tableRef": "status",

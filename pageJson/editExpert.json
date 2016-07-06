@@ -185,6 +185,15 @@
         "url": "",
         "model": "accountHolderName"
     },{
+        "name": "password",
+        "type": "password",
+        "tableRef": "password",
+        "placeholder": "Enter password",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "password"
+    },{
         "name": "Image",
         "type": "image",
         "tableRef": "image",
@@ -234,18 +243,6 @@
       "name":"Experience",
       "action":"sidemenuRedirect",
       "jsonPage":"viewExpertExperience",
-      "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
-    },{
-      "name":"Call Settings",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertcallSettings",
-      "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
-    },{
-      "name":"Video Links",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertvideoLinks",
       "fieldsToSend":[1],
       "callFindOne":"expertuser/getOne"
     },{

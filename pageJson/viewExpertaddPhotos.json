@@ -2,7 +2,8 @@
     "title": "Experts Photos",
     "desciption": "",
     "pageType": "view",
-    "urlFields": ["_id","awards._id"],
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
     "fields": [{
             "name": "Id",
             "isSort": "",
@@ -19,7 +20,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editExpertEducation",
+        "jsonPage": "editExpertAddPhotos",
         "fieldsToSend": ["_id"],
         "callFindOne": "expertuser/getOne"
     }, {
@@ -29,7 +30,7 @@
         "action": "apiCallConfirm",
         "title": "Delete User",
         "content": "Are you sure you want to delete user?",
-        "api": "expertuser/delete",
+        "api": "expertuser/deleteAddPhotos",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -59,7 +60,7 @@
         "url": "expertuser/getOne",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createExpert'})",
+    "createButtonState": "page({jsonName:'createExpertAddPhotos'})",
 
         "sidemenu": [{
           "name":"Expert Details",
@@ -84,18 +85,6 @@
           "name":"Experience",
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertExperience",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Call Settings",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertcallSettings",
-          "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
-        },{
-          "name":"Video Links",
-          "action":"sidemenuRedirect",
-          "jsonPage":"viewExpertvideoLinks",
           "fieldsToSend":[1],
           "callFindOne":"expertuser/getOne"
         },{

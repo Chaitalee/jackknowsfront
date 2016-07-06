@@ -30,13 +30,20 @@
             <div ng-if="field.type=='selectFromTable'">
                 <label>{{field.name}}</label>
                 <md-select ng-model="json.editData[field.model]">
-                    <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
+                    <md-option ng-repeat="item in field.url" value="{{item}}">{{item}}</md-option>
                 </md-select>
             </div>
             <div ng-if="field.type=='date'">
                 <label>Date</label>
                 <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
                 <input ng-model="json.editData[field.model]" type="date" name="{{field.name}}" id="{{field.id}}">
+                <!-- <md-datepicker ng-model="" md-placeholder="Enter date"></md-datepicker> -->
+
+            </div>
+            <div ng-if="field.type=='time'">
+                <label>{{field.name}}</label>
+                <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
+                <input ng-model="json.editData[field.model]" type="time" name="{{field.name}}" id="{{field.id}}">
                 <!-- <md-datepicker ng-model="" md-placeholder="Enter date"></md-datepicker> -->
 
             </div>

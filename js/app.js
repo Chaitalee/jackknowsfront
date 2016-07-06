@@ -72,6 +72,15 @@ firstapp.filter('uploadpath', function() {
     };
 });
 
+firstapp.filter('toDate', function() {
+    return function(input) {
+        if (input) {
+          console.log(input);
+            return new Date(input);
+        }
+    };
+});
+
 firstapp.filter('getValue', function($filter) {
     return function(input, keyVal, type) {
         if (keyVal) {
@@ -82,9 +91,17 @@ firstapp.filter('getValue', function($filter) {
             });
             console.log(type);
             if (type == "date") {
+                console.log('in date');
                 // return new Date(returnValue);
                 return $filter("date")(returnValue, "medium");
-            } else if (type != "image") {
+            }if (type == "longdate") {
+                console.log('in date');
+                // return new Date(returnValue);
+                return $filter("date")(returnValue, "longDate");
+            }if(type == "time"){
+              console.log('in time');
+              return $filter("date")(returnValue, "shortTime");
+            } if (type != "image") {
                 return returnValue;
             } else {
                 return $filter("uploadpath")(returnValue, 100, 100, "fill");
