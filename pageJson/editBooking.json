@@ -1,5 +1,5 @@
 {
-    "title": "Edit User",
+    "title": "Edit Booking",
     "jsonPage": "viewBooking",
     "desciption": "",
     "pageType": "edit",
@@ -51,21 +51,21 @@
         "model": "callId"
     },{
         "name": "User",
-        "type": "text",
+        "type": "selectFromTable",
         "tableRef": "user",
         "placeholder": "Enter User",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
+        "url": "user/getAll",
         "model": "user"
     },{
         "name": "expert",
-        "type": "text",
+        "type": "selectFromTable",
         "tableRef": "expert",
         "placeholder": "Enter Expert",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
+        "url": "expertuser/getAll",
         "model": "expert"
     },{
         "name": "Status",

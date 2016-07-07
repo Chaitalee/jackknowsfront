@@ -60,7 +60,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getAll",
+        "url": "expertuser/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createExpert'})"

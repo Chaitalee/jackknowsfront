@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload','ui.bootstrap'])
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
@@ -109,6 +109,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
 
+            // get select fields dropdown
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                if (!n.dropDownName) {
+                                    dropdown.name = data.data[i].name;
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                }
+                                n.dropdownvalues.push(dropdown);
+                            }
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
+
         } else if (data.pageType == "edit") {
             console.log("Edit");
             // $scope.json.editData.educationalQualification=[];
@@ -131,14 +155,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, function() {
                 console.log("Fail");
             });
+            // get select fields dropdown
+           _.each($scope.json.fields, function(n) {
+               if (n.type == "selectFromTable") {
+                   NavigationService.getDropDown(n.url, function(data) {
+                       console.log(data);
+                       n.dropdownvalues = [];
+                       if (data) {
+                           for (var i = 0; i < data.data.length; i++) {
+                               var dropdown = {};
+                               dropdown._id = data.data[i]._id;
+                               console.log('dropdown._id',dropdown._id);
+                               if (!n.dropDownName) {
+                                 console.log('in ifff');
+                                   dropdown.firstName = data.data[i].firstName;
+                                   console.log('dropdown.name',dropdown.firstName);
+                               } else {
+                                   dropdown.name = data.data[i][n.dropDownName];
+                                   console.log('dropdown.name',dropdown.name);
+                               }
+                               n.dropdownvalues.push(dropdown);
+                               console.log('dropdown',dropdown);
+                           }
+                       }
+                   }, function() {
+                       console.log("Fail");
+                   });
+               }
+           });
 
         } else if (data.pageType == "view") {
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-            var pagination = {
+            $scope.pagination = {
                 "search": "",
                 "pagenumber": "1",
-                "pagesize": "10"
+                "pagesize": "5"
             };
             // SIDE MENU DATA
             var urlid1 = $location.absUrl().split('%C2%A2')[1];
@@ -178,13 +230,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-
-            NavigationService.findProjects($scope.apiName, pagination, function(data) {
-                $scope.json.tableData = data.data;
-                console.log($scope.json.tableData);
-            }, function() {
-                console.log("Fail");
-            });
+            //
+            // NavigationService.findProjects($scope.apiName, pagination, function(data) {
+            //     $scope.json.tableData = data.data;
+            //     console.log($scope.json.tableData);
+            // }, function() {
+            //     console.log("Fail");
+            // });
             // NavigationService.findProjects($scope.apiName, pagination, function(data) {
             //     $scope.json.tableData = data.data.data;
             //     console.log($scope.json.tableData);
@@ -192,6 +244,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             //     console.log("Fail");
             // });
             console.log("hij");
+
+            // call api for view data
+           $scope.pageInfo = {};
+            $scope.getMoreResults = function() {
+                NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                  console.log(findData);
+                    if (findData.value !== false) {
+                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                            $scope.pageInfo.lastpage = findData.data.totalpages;
+                            $scope.pageInfo.pagenumber = $scope.pagination.pagenumber;
+                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                            $scope.json.tableData = findData.data.data;
+                        } else {
+                            $scope.json.tableData = [];
+                        }
+                    }
+                     else {
+                        $scope.json.tableData = [];
+                    }
+                }, function() {
+                    console.log("Fail");
+                });
+            };
+            $scope.getMoreResults();
+
         }
         $scope.template = TemplateService.jsonType(data.pageType);
     });

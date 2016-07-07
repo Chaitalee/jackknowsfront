@@ -31,12 +31,32 @@
                     <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
                 </md-select>
             </div>
-            <div ng-if="field.type=='selectFromTable'">
+            <!-- <div ng-if="field.type=='selectFromTable'">
                 <label>{{field.name}}</label>
                 <md-select ng-model="json.editData[field.model]">
                     <md-option ng-repeat="item in field.url" value="{{item}}">{{item}}</md-option>
                 </md-select>
-            </div>
+            </div> -->
+
+
+            <!-- // SELECT -->
+                 <div ng-if="field.type=='selectFromTable'">
+
+                   <label for="{{field.id}}">{{field.name}}</label>
+                   <br>
+                   <!-- <select ng-model="field.model" ng-options="item._id as item.name for item in field.url">
+                                               </select> -->
+
+                   <select style="width: 100%;border: none;background: #fff;border-bottom: 1px solid rgb(225, 225, 225);margin-top: 10px; padding2px;" ng-model="json.editData[field.model]">{{json.editData[field.model]}}
+                     <option value="">SELECT</option>
+                     <option ng-repeat="item in field.dropdownvalues track by $index" value="{{item._id}}" ng-selected="{{ item.name.Selected == true }}">
+                       {{item.firstName}}
+                     </option>
+                   </select>
+                   <br>
+                 </div>
+
+
             <div ng-if="field.type=='date'">
 
                 <label>{{field.name}}</label>
@@ -60,10 +80,7 @@
 
         <md-list ng-cloak>
             <md-list-item ng-repeat="field in json.fields">
-                <img ng-src="{{json.editData.educationalQualification[field.model] | uploadpath:250:250:'fill'}}" class="md-avatar" alt="{{json.editData[field.model]}}" ng-if="field.type=='image'" />
-                <!-- <div class="md-list-item-text" ng-if="field.type=='image'">
-          <h3>{{field.name}}</h3>
-        </div> -->
+                <img ng-src="{{json.editData[field.model] | uploadpath:250:250:'fill'}}" class="md-avatar" alt="{{json.editData[field.model]}}" ng-if="field.type=='image'" />
             </md-list-item>
         </md-list>
 

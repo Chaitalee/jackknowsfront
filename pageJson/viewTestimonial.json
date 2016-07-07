@@ -60,7 +60,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "testimonial/getAll",
+        "url": "testimonial/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createTestimonial'})"
