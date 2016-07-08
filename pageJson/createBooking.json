@@ -46,7 +46,7 @@
     }],
 
     "apiCall": {
-        "url": "booking/saveData"
+        "url": "booking/saveBooking"
     },
 
     "sidemenu": [{

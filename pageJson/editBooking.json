@@ -86,7 +86,7 @@
         "stateName": "page({jsonName:'viewBooking'})"
     }],
     "apiCall": {
-        "url": "booking/saveData",
+        "url": "booking/saveBooking",
         "params": "_id"
     },
     "preApi": {

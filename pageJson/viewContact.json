@@ -59,7 +59,7 @@
       }
     ],
     "apiCall": {
-        "url": "contact/getAll",
+        "url": "contact/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createNewsletter'})"

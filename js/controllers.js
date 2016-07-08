@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload','ui.bootstrap'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap'])
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
@@ -156,33 +156,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log("Fail");
             });
             // get select fields dropdown
-           _.each($scope.json.fields, function(n) {
-               if (n.type == "selectFromTable") {
-                   NavigationService.getDropDown(n.url, function(data) {
-                       console.log(data);
-                       n.dropdownvalues = [];
-                       if (data) {
-                           for (var i = 0; i < data.data.length; i++) {
-                               var dropdown = {};
-                               dropdown._id = data.data[i]._id;
-                               console.log('dropdown._id',dropdown._id);
-                               if (!n.dropDownName) {
-                                 console.log('in ifff');
-                                   dropdown.firstName = data.data[i].firstName;
-                                   console.log('dropdown.name',dropdown.firstName);
-                               } else {
-                                   dropdown.name = data.data[i][n.dropDownName];
-                                   console.log('dropdown.name',dropdown.name);
-                               }
-                               n.dropdownvalues.push(dropdown);
-                               console.log('dropdown',dropdown);
-                           }
-                       }
-                   }, function() {
-                       console.log("Fail");
-                   });
-               }
-           });
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                console.log('dropdown._id', dropdown._id);
+                                if (!n.dropDownName) {
+                                    console.log('in ifff');
+                                    dropdown.firstName = data.data[i].firstName;
+                                    console.log('dropdown.name', dropdown.firstName);
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                    console.log('dropdown.name', dropdown.name);
+                                }
+                                n.dropdownvalues.push(dropdown);
+                                console.log('dropdown', dropdown);
+                            }
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
 
         } else if (data.pageType == "view") {
             // call api for view data
@@ -198,6 +198,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // var urlid2 = $location.absUrl().split('%C2%A2')[2];
             $scope.pagination1 = {};
             if (urlid1) {
+                console.log('urlid1', urlid1);
                 if ($scope.json.sendIdWithCreate) {
                     $scope.json.createButtonState = $scope.json.createButtonState.split("'" + "})").join("¢" + urlid1 + "'" + "})");
                     // $scope.json.createButtonState = $scope.json.createButtonState.split("%25C2%").join("%C2%");
@@ -246,10 +247,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("hij");
 
             // call api for view data
-           $scope.pageInfo = {};
+            $scope.pageInfo = {};
             $scope.getMoreResults = function() {
                 NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                  console.log(findData);
+                    console.log(findData);
                     if (findData.value !== false) {
                         if (findData.data && findData.data.data && findData.data.data.length > 0) {
                             $scope.pageInfo.lastpage = findData.data.totalpages;
@@ -259,8 +260,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         } else {
                             $scope.json.tableData = [];
                         }
-                    }
-                     else {
+                    } else {
                         $scope.json.tableData = [];
                     }
                 }, function() {

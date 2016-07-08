@@ -64,7 +64,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "booking/getAll",
+        "url": "booking/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createBooking'})"

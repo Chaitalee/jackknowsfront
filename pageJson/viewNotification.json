@@ -52,7 +52,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "notification/getAll",
+        "url": "notification/getLimited",
         "params": ""
     }
 }

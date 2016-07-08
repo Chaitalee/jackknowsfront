@@ -56,7 +56,7 @@
       }
     ],
     "apiCall": {
-        "url": "newsletter/getAll",
+        "url": "newsletter/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createNewsletter'})"
