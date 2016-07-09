@@ -232,13 +232,13 @@
       "action":"sidemenuRedirect",
       "jsonPage":"viewExpertEducation",
       "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
+      "callFindOne":"expertuser/getLimitedEducation"
     },{
       "name":"Awards",
       "action":"sidemenuRedirect",
       "jsonPage":"viewExpertAwards",
       "fieldsToSend":[1],
-      "callFindOne":"expertuser/getOne"
+      "callFindOne":"expertuser/getLimitedAwards"
     },{
       "name":"Experience",
       "action":"sidemenuRedirect",

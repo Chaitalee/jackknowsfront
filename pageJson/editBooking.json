@@ -59,7 +59,7 @@
         "url": "user/getAll",
         "model": "user"
     },{
-        "name": "expert",
+        "name": "Expert",
         "type": "selectFromTable",
         "tableRef": "expert",
         "placeholder": "Enter Expert",

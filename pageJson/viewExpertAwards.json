@@ -55,7 +55,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getLimitedAwards",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createExpertAwards'})",
@@ -70,14 +70,14 @@
         "name": "Educational Qualification",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertEducation",
-        "fieldsToSend": [1, 2],
+        "fieldsToSend": [1],
         "callFindOne": "expertuser/getOneEducationQualification"
     }, {
         "name": "Awards",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertAwards",
         "fieldsToSend": [1],
-        "callFindOne": "expertuser/getOne"
+        "callFindOne": "expertuser/getLimitedAwards"
     }, {
         "name": "Experience",
         "action": "sidemenuRedirect",

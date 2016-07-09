@@ -57,7 +57,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getLimitedAddPhotos",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createExpertAddPhotos'})",
@@ -73,7 +73,7 @@
           "name":"Educational Qualification",
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertEducation",
-          "fieldsToSend":[1,2],
+          "fieldsToSend":[1],
           "callFindOne":"expertuser/getOneEducationQualification"
         },{
           "name":"Awards",
@@ -92,12 +92,12 @@
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertpublicationLinks",
           "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
+          "callFindOne":"expertuser/getLimitedPublicationLink"
         },{
           "name":"Add Photos",
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertaddPhotos",
           "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
+          "callFindOne":"expertuser/getLimitedAddPhotos"
         }]
 }

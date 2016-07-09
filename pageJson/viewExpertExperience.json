@@ -67,7 +67,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getLimitedExperience",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createExpertExperience'})",
@@ -95,7 +95,7 @@
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertExperience",
         "fieldsToSend": [1],
-        "callFindOne": "expertuser/getOne"
+        "callFindOne": "expertuser/getLimitedExperience"
     },  {
         "name": "Publication Links",
         "action": "sidemenuRedirect",

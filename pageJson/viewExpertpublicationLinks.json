@@ -56,7 +56,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getLimitedPublicationLink",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createExpertPublicationLinks'})",
@@ -91,7 +91,7 @@
           "action":"sidemenuRedirect",
           "jsonPage":"viewExpertpublicationLinks",
           "fieldsToSend":[1],
-          "callFindOne":"expertuser/getOne"
+          "callFindOne":"expertuser/getLimitedPublicationLink"
         },{
           "name":"Add Photos",
           "action":"sidemenuRedirect",

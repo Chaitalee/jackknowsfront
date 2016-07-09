@@ -220,8 +220,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     });
                 } else {
                     console.log("ELSE");
-                    pagination._id = urlid1;
-                    NavigationService.sideMenu1($scope.api1, pagination, function(data) {
+                    $scope.pagination._id = urlid1;
+                    NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
                         $scope.json.tableData = data.data.data;
                         console.log($scope.json.tableData);
                     }, function() {
@@ -250,13 +250,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pageInfo = {};
             $scope.getMoreResults = function() {
                 NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                    console.log(findData);
+                    console.log(findData.value);
                     if (findData.value !== false) {
+console.log('in if',findData.data);
                         if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                          console.log('findData.data.data.length');
+                            console.log('findData.data',findData.data);
                             $scope.pageInfo.lastpage = findData.data.totalpages;
                             $scope.pageInfo.pagenumber = $scope.pagination.pagenumber;
                             $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
                             $scope.json.tableData = findData.data.data;
+                            console.log('$scope.json.tableData',$scope.json.tableData);
                         } else {
                             $scope.json.tableData = [];
                         }

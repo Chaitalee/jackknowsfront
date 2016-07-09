@@ -2,7 +2,6 @@
     "title": "Experts Education",
     "desciption": "",
     "pageType": "view",
-    "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
             "name": "degreeTitle",
@@ -61,7 +60,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "expertuser/getOne",
+        "url": "expertuser/getLimitedEducation",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createExpertEducation'})",
@@ -75,14 +74,14 @@
         "name": "Educational Qualification",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertEducation",
-        "fieldsToSend": [1, 2],
-        "callFindOne": "expertuser/getOneEducationQualification"
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getLimitedEducation"
     }, {
         "name": "Awards",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertAwards",
         "fieldsToSend": [1],
-        "callFindOne": "expertuser/getOne"
+        "callFindOne": "expertuser/getLimitedAwards"
     }, {
         "name": "Experience",
         "action": "sidemenuRedirect",

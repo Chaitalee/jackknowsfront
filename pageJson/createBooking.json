@@ -13,12 +13,12 @@
         "url": ""
     }, {
         "name": "CallDuration",
-        "type": "text",
+        "type": "selectFromTable",
         "tableRef": "callDuration",
         "placeholder": "Enter CallDuration",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": ["10 Min","30 Min","60 Min","90 Min","120 Min"]
     }, {
         "name": "CallTime",
         "type": "date",

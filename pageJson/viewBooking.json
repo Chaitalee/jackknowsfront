@@ -3,6 +3,14 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
+        "name": "Expert",
+        "isSort": "",
+        "tableRef": "expert.firstName"
+    }, {
+        "name": "User",
+        "isSort": "",
+        "tableRef": "user.firstName"
+    },{
             "name": "Query",
             "isSort": "",
             "tableRef": "query"
@@ -66,6 +74,6 @@
     "apiCall": {
         "url": "booking/getLimited",
         "params": ""
-    },
-    "createButtonState": "page({jsonName:'createBooking'})"
+    }
+
 }
