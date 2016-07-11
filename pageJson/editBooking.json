@@ -33,7 +33,7 @@
         "model": "callDuration"
     },{
         "name": "CallTime",
-        "type": "date",
+        "type": "datetime",
         "tableRef": "callTime",
         "placeholder": "Enter CallTime",
         "id": "input4",

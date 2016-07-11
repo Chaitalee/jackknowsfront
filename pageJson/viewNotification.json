@@ -3,6 +3,14 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
+            "name": "Expert",
+            "isSort": "",
+            "tableRef": "expert.firstName"
+        }, {
+            "name": "User",
+            "isSort": "",
+            "tableRef": "user.firstName"
+        }, {
             "name": "Notification",
             "isSort": "",
             "tableRef": "notification"
@@ -10,7 +18,7 @@
             "name": "Timestamp",
             "isSort": "",
             "tableRef": "timestamp",
-            "type":"date"
+            "type": "date"
         }, {
             "name": "Status",
             "isSort": "",

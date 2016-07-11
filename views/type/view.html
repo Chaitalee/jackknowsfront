@@ -1,7 +1,16 @@
 <section class="md-whiteframe-z1 users">
     <md-list ng-cloak>
-        <md-subheader class="md-no-sticky">{{json.title}}
+        <div class="" layout="row" layout-xs="column">
+          <div flex class="flex">
+        <md-subheader class="md-no-sticky layout-lg">{{json.title}}
         </md-subheader>
+          </div>
+          <div flex class="flex search-bar">
+                  <md-autocomplete md-search-text="pagination.search" md-items="result in json.tableData track by $index" md-min-length="0" md-search-text-change="getMoreResults();" placeholder="Search" class="layout-lg">
+          </md-autocomplete>
+          </div>
+
+</div>
 
         <md-divider></md-divider>
 

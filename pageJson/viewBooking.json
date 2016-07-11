@@ -3,14 +3,14 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-        "name": "Expert",
-        "isSort": "",
-        "tableRef": "expert.firstName"
-    }, {
-        "name": "User",
-        "isSort": "",
-        "tableRef": "user.firstName"
-    },{
+            "name": "Expert",
+            "isSort": "",
+            "tableRef": "expert.firstName"
+        }, {
+            "name": "User",
+            "isSort": "",
+            "tableRef": "user.firstName"
+        }, {
             "name": "Query",
             "isSort": "",
             "tableRef": "query"
@@ -22,7 +22,7 @@
             "name": "CallTime",
             "isSort": "",
             "tableRef": "callTime",
-            "type":"date"
+            "type": "date"
         }, {
             "name": "Status",
             "isSort": "",

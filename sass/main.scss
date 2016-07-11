@@ -95,3 +95,9 @@ select {
    padding: 20px;
    text-align: center;
 }
+
+.search-bar {
+  .layout-row {
+    width: 100% !important;
+  }
+}
