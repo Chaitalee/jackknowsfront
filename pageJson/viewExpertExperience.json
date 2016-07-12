@@ -31,7 +31,7 @@
         "color": "blue",
         "action": "redirect",
         "jsonPage": "editExpertExperience",
-        "fieldsToSend": ["id"],
+        "fieldsToSend": ["_id"],
         "callFindOne": "expertuser/getOne"
     }, {
         "name": "delete",
@@ -82,7 +82,7 @@
         "name": "Educational Qualification",
         "action": "sidemenuRedirect",
         "jsonPage": "viewExpertEducation",
-        "fieldsToSend": [1, 2],
+        "fieldsToSend": [1],
         "callFindOne": "expertuser/getOneEducationQualification"
     }, {
         "name": "Awards",

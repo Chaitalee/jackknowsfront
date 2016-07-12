@@ -3,9 +3,10 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "First Name",
+            "name": "Name",
             "isSort": "",
-            "tableRef": "firstName"
+            "tableRef": "firstName",
+            "type": "text"
         }, {
             "name": "Email",
             "isSort": "",

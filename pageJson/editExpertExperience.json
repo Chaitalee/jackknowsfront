@@ -42,7 +42,7 @@
         "model": "jobTitle"
     }, {
         "name": "Start Date",
-        "type": "text",
+        "type": "date",
         "tableRef": "startDate",
         "placeholder": "Enter Start Date",
         "id": "input2",
@@ -51,22 +51,13 @@
         "model": "startDate"
     }, {
         "name": "End Date",
-        "type": "text",
+        "type": "date",
         "tableRef": "endDate",
         "placeholder": "Enter End Date",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "endDate"
-    }, {
-        "name": "Image",
-        "type": "text",
-        "tableRef": "image1",
-        "placeholder": "Enter Image",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image1"
     }, {
         "name": "Job Description",
         "type": "text",
@@ -76,6 +67,15 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "jobDescription"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image1",
+        "placeholder": "Enter Image",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "image1"
     }],
     "action": [{
         "name": "submit",

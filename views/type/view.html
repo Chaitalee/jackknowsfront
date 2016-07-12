@@ -1,16 +1,16 @@
 <section class="md-whiteframe-z1 users">
     <md-list ng-cloak>
         <div class="" layout="row" layout-xs="column">
-          <div flex class="flex">
-        <md-subheader class="md-no-sticky layout-lg">{{json.title}}
-        </md-subheader>
-          </div>
-          <div flex class="flex search-bar">
-                  <md-autocomplete md-search-text="pagination.search" md-items="result in json.tableData track by $index" md-min-length="0" md-search-text-change="getMoreResults();" placeholder="Search" class="layout-lg">
-          </md-autocomplete>
-          </div>
+            <div flex class="flex">
+                <md-subheader class="md-no-sticky layout-lg">{{json.title}}
+                </md-subheader>
+            </div>
+            <div flex class="flex search-bar">
+                <md-autocomplete md-search-text="pagination.search" md-items="result in json.tableData track by $index" md-min-length="0" md-search-text-change="getMoreResults();" placeholder="Search" class="layout-lg">
+                </md-autocomplete>
+            </div>
 
-</div>
+        </div>
 
         <md-divider></md-divider>
 
@@ -27,8 +27,10 @@
 
         <md-list-item ng-show="json.tableData.length>=0" ng-repeat="result in json.tableData track by $index" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
-                <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.tableRef:field.type}}</span> -->
+                <span ng-if="field.type!='image' && field.type!='text'">{{result|getValue:field.tableRef:field.type}}</span>
+                <span ng-if="field.name=='Name' && field.type=='text'"> {{result|getValue:'firstName':field.type}} {{result|getValue:'lastName':field.type}}</span>
+                <span ng-if="field.name=='User' && field.type=='text'">{{}} {{result|getValue:'user.firstName':field.type}} {{result|getValue:'user.lastName':field.type}}</span>
+                <span ng-if="field.name=='Expert' && field.type=='text'">{{}} {{result|getValue:'expert.firstName':field.type}} {{result|getValue:'expert.lastName':field.type}}</span>
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -106,7 +108,7 @@
         <md-list-item ng-if="json.tableData.callSettings.length>=0" ng-repeat="result in json.tableData.callSettings" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                  <!-- <span ng-if="field.type=='time'">{{result|getValue:field.tableRef:field.type}}</span> -->
+                <!-- <span ng-if="field.type=='time'">{{result|getValue:field.tableRef:field.type}}</span> -->
                 <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
@@ -115,7 +117,7 @@
             </md-button>
         </md-list-item>
 
-  <uib-pagination total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" class="pagination-sm" boundary-link-numbers="true" items-per-page="pagination.pagesize" ng-change="getMoreResults();" max-size="pageInfo.totalitems" ng-hide="pageInfo.lastpage==1"></uib-pagination>
+        <uib-pagination total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" class="pagination-sm" boundary-link-numbers="true" items-per-page="pagination.pagesize" ng-change="getMoreResults();" max-size="pageInfo.totalitems" ng-hide="pageInfo.lastpage==1"></uib-pagination>
 
     </md-list>
 

@@ -2,6 +2,7 @@
     "title": "Experts Education",
     "desciption": "",
     "pageType": "view",
+    "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
             "name": "degreeTitle",

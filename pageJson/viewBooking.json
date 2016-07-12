@@ -5,11 +5,13 @@
     "fields": [{
             "name": "Expert",
             "isSort": "",
-            "tableRef": "expert.firstName"
+            "tableRef": "expert.firstName",
+            "type": "text"
         }, {
             "name": "User",
             "isSort": "",
-            "tableRef": "user.firstName"
+            "tableRef": "user.firstName",
+            "type": "text"
         }, {
             "name": "Query",
             "isSort": "",
