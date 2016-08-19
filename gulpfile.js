@@ -1,6 +1,5 @@
 var jsArray = [
   "./bower_components/jquery/dist/jquery.js",
-
   "./bower_components/angular/angular.js",
   "./bower_components/angular-sanitize/angular-sanitize.min.js",
   "./bower_components/ui-router/release/angular-ui-router.min.js",
@@ -20,8 +19,8 @@ var jsArray = [
   "./bower_components/ace-builds/src-noconflict/ace.js",
   "./bower_components/ace-builds/src-noconflict/theme-monokai.js",
   "./bower_components/ace-builds/src-noconflict/mode-json.js",
-  "./bower_components/angular-boostrap/ui-boostrap-tpls.min.js",
   "./bower_components/angular-boostrap/ui-boostrap.min.js",
+  "./bower_components/angular-boostrap/ui-boostrap-tpls.min.js",
 
   "./js/app.js",
   "./js/controllers.js",
@@ -36,9 +35,9 @@ var replacehostTo = "http://wohlig.co.in/demo2/";
 
 
 
-var ftpString = "U2FsdGVkX1+jcFED/CJbcYNiOJ42eBsjlxqmrcKWSIPH9Sao/4535zPQX5Fa7VYGAHSfkKCXbDpiUfJhkRRijaerS1lJ/k+dSfqsfl45ICkzMTJ7fBNVDj/242ur9ZG4HZDhSe1O/J4vEUboWDRBhg==";
+var ftpString = "U2FsdGVkX19KJ4w0W1pxaUyRsJcjQO5RL98s2rfWnmpoGlaoPfxb8Ibdl0yu5NoHaLfSDmk2WnqRVpQfIAB8wv/Srsy/Y9OUyx5gs3ZutJ2MdGMlS8IaMJmfLSp77xVx1yuRD4aFlRuo0yQ/Ldy2pA==";
 
-var uploadingFolder = "jppworldfront";
+var uploadingFolder = "jacknowsfront";
 var password = "";
 
 
