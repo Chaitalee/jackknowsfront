@@ -25,6 +25,10 @@
             "isSort": "",
             "tableRef": "callTime",
             "type": "date"
+        },{
+            "name": "Amount",
+            "isSort": "",
+            "tableRef": "finalAmount"
         }, {
             "name": "Status",
             "isSort": "",

@@ -1,10 +1,11 @@
 // var adminurl = "http://blazen.io/";
-// var adminurl = "http://localhost:1337/";
-var adminurl = "http://localhost:81/";
+var adminurl = "http://jacknows.wohlig.com/";
+
+// var adminurl = "http://localhost:81/";
 // var adminurl = "http://chaitalee.com/";
-var imgurl = "http://146.148.4.222/upload/";
+// var imgurl = "http://localhost:81/upload/";
 // var adminurl = "http://146.148.4.222/";
-// var imgurl = "http://146.148.4.222/upload/";
+var imgurl = "http://jacknows.wohlig.com/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
 // var adminurl = "http://pantherworldadmin.jaipurpinkpanthers.com/";
