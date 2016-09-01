@@ -61,7 +61,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonParam9 = jsonArr[9];
     console.log(jsonArr[0]);
 
-
+    $scope.removeImage = function(page, image,field) {
+      field.model = "";
+        $scope.json.editData[image] = "";
+    };
 
     $scope.confirm = function(title, content, api, data) {
         var confirm = $mdDialog.confirm()
@@ -79,6 +82,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, function() {
 
         });
+    };
+    $scope.search='';
+    $scope.searchClick=function(search){
+      $scope.search=search;
+      console.log($scope.search);
+      search=$scope.search;
+      $scope.getMoreResults(undefined,$scope.search);
     };
     $http.get("./pageJson/" + jsonName + ".json").success(function(data) {
 

@@ -1,4 +1,4 @@
-<section class="md-whiteframe-z1 users">
+<!-- <section class="md-whiteframe-z1 users">
     <md-list ng-cloak>
         <div class="" layout="row" layout-xs="column">
             <div flex class="flex">
@@ -38,22 +38,9 @@
             </md-button>
         </md-list-item>
 
-        <!-- <md-list-item ng-if="json.tableData.educationalQualification.length>=0" ng-repeat="result in json.tableData.educationalQualification" class="secondary-button-padding padlr16">
-            <p ng-repeat="field in json.fields">
-                <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span>
-                <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
-            </p>
-            <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
-                <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:{{action.color}};"></ng-md-icon>
-            </md-button>
-        </md-list-item> -->
-
-
         <md-list-item ng-if="json.tableData.awards.length>=0" ng-repeat="result in json.tableData.awards" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -64,7 +51,6 @@
         <md-list-item ng-if="json.tableData.experience.length>=0" ng-repeat="result in json.tableData.experience" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -75,7 +61,6 @@
         <md-list-item ng-if="json.tableData.videoLinks.length>=0" ng-repeat="result in json.tableData.videoLinks" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -86,7 +71,6 @@
         <md-list-item ng-if="json.tableData.addPhotos.length>=0" ng-repeat="result in json.tableData.addPhotos" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -97,7 +81,6 @@
         <md-list-item ng-if="json.tableData.publicationLinks.length>=0" ng-repeat="result in json.tableData.publicationLinks" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
                 <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
@@ -106,22 +89,94 @@
         </md-list-item>
 
         <md-list-item ng-if="json.tableData.callSettings.length>=0" ng-repeat="result in json.tableData.callSettings" class="secondary-button-padding padlr16">
+          <p ng-repeat="field in json.fields">
+              <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type!=''">{{result|getValue:field.tableRef:field.type}}</span>
+              <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type ==''"></span>
+              <span class="img-holder">
+                  <img ng-src="{{result|getValue:field.tableRef:field.type}}" alt="" ng-if="field.type=='image'">
+              </span>
+          </p>
+            <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
+                <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:{{action.color}};"></ng-md-icon>
+            </md-button>
+        </md-list-item>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+
+    </md-list>
+
+    <a ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification' || json.title=='All Booking'">
+        <md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Add Users">
+            <md-icon class="fa fa-plus plus-icon"></md-icon>
+        </md-button>
+    </a>
+</section> -->
+
+
+<section class="md-whiteframe-z1 users pb50">
+    <md-list ng-cloak>
+      <md-input-container ng-if="json.addSearch">
+    <label>Movies</label>
+    <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
+      <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
+        {{dropdown.name}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+  <div class="search-input" ng-if="!json.addSearch">
+    <input ng-model="search" type="text">
+      <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+    </div>
+  <!-- <md-autocomplete
+              md-search-text="searchForm.name"
+              md-items="item in ctrl.querySearch(searchForm.name)"
+              md-item-text="item.display"
+              md-min-length="0"
+              placeholder="Search"
+              ng-model='search'
+              >
+          </md-autocomplete> -->
+        <div class="pull-right">
+            <a class="add-position" ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification'">
+                <md-button class="md-fab md-primary md-mini" aria-label="Add Users">
+                    <md-icon class="fa fa-plus plus-icon"></md-icon>
+                </md-button>
+            </a>
+        </div>
+        <md-subheader class="md-no-sticky">{{json.title}}
+        </md-subheader>
+        <md-divider></md-divider>
+        <md-list-item class="ls-head secondary-button-padding padlr16">
+            <p ng-repeat="field in json.fields">{{field.name}}</p>
+            <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action">
+                <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:black;"></ng-md-icon>
+            </md-button>
+        </md-list-item>
+
+        <div ng-hide="json.tableData.length>=0" class="loadingbox">
+            Loading...
+        </div>
+
+        <md-list-item ng-show="json.tableData.length>=0" ng-repeat="result in json.tableData track by $index" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
-                <span ng-if="field.type!='image'">{{result|getValue:field.tableRef:field.type}}</span>
-                <!-- <span ng-if="field.type=='time'">{{result|getValue:field.tableRef:field.type}}</span> -->
-                <!-- <span ng-if="field.type=='date'">{{result|getValue:field.new Date(tableRef)}}</span> -->
-                <img ng-src="{{result|getValue:field.tableRef:field.type}}" ng-if="field.type=='image'">
+                <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type!=''">{{result|getValue:field.tableRef:field.type}}</span>
+                <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type ==''"></span>
+                <span class="img-holder">
+                    <img ng-src="{{result|getValue:field.tableRef:field.type}}" alt="" ng-if="field.type=='image'">
+                </span>
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
                 <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:{{action.color}};"></ng-md-icon>
             </md-button>
         </md-list-item>
-
-        <uib-pagination total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" class="pagination-sm" boundary-link-numbers="true" items-per-page="pagination.pagesize" ng-change="getMoreResults();" max-size="pageInfo.totalitems" ng-hide="pageInfo.lastpage==1"></uib-pagination>
+        <!-- {{pageInfo}}{{pagination}} -->
+        <div class="" ng-if="pageInfo.totalitems"></div>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
 
     </md-list>
 
-    <a ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification' || json.title=='All Booking'">
+    <a class="add-position" ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification'">
         <md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Add Users">
             <md-icon class="fa fa-plus plus-icon"></md-icon>
         </md-button>

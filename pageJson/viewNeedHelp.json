@@ -1,0 +1,70 @@
+{
+    "title": "All Need Help",
+    "description": "",
+    "pageType": "view",
+    "fields": [
+      {
+        "name":"Name",
+        "isSort":"",
+        "tableRef":"name"
+      },  {
+          "name":"Email",
+          "isSort":"",
+          "tableRef":"email"
+        }
+
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editNeedHelp",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "findExpert/getOne"
+    },{
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete User",
+        "content": "Are you sure you want to delete user?",
+        "api": "findExpert/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [
+      {
+        "name":"excelexport",
+        "icon":"print",
+        "color":"blue",
+        "action":"excelexport"
+      },
+      {
+        "name":"uploadcsv",
+        "icon":"delete",
+        "color":"red",
+        "action":"uploadcsv"
+      }
+    ],
+    "filter": [
+      {
+        "name":"category",
+        "url":"http://chaitalee.com/category/getAll"
+      },
+      {
+        "name":"uploadcsv",
+        "icon":"delete",
+        "color":"red",
+        "action":"uploadcsv"
+      }
+    ],
+    "apiCall": {
+        "url": "findExpert/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createNewsletter'})"
+
+}

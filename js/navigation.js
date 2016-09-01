@@ -1,7 +1,7 @@
 // var adminurl = "http://blazen.io/";
 var adminurl = "http://jacknows.wohlig.com/";
 
-// var adminurl = "http://localhost:81/";
+// var adminurl = "http://localhost:80/";
 // var adminurl = "http://chaitalee.com/";
 // var imgurl = "http://localhost:81/upload/";
 // var adminurl = "http://146.148.4.222/";
@@ -53,6 +53,11 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Expert",
         classis: "active",
         link: "#/page/viewExpert",
+        subnav: []
+    }, {
+        name: "Need Help",
+        classis: "active",
+        link: "#/page/viewNeedHelp",
         subnav: []
     }];
 

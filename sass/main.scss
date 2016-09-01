@@ -101,3 +101,127 @@ select {
     width: 100% !important;
   }
 }
+.edit-image {
+  width: auto !important;
+  height: auto !important;
+}
+.pagination-page a , .pagination-prev a, .pagination-next a {
+position: relative;
+float: left;
+padding: .5rem .75rem;
+margin-left: -1px;
+line-height: 1.5;
+color: #0275d8;
+text-decoration: none;
+background-color: #fff;
+border: 1px solid #ddd;
+}
+.pagination-page, .pagination-prev, .pagination-next {
+display: inline;
+}
+.pagination {
+display: inline-block;
+margin-top: 1rem;
+margin-bottom: 1rem;
+border-radius: .25rem;
+}
+
+////////////////
+
+.chipsdemoBasicUsage .errors {
+  font-size: 12px;
+  color: #dd2c00;
+  margin-top: 10px; }
+
+.chipsdemoBasicUsage .custom-chips md-chip {
+  position: relative; }
+  .chipsdemoBasicUsage .custom-chips md-chip ._md-chip-remove-container {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    margin-right: 0;
+    height: 24px; }
+    .chipsdemoBasicUsage .custom-chips md-chip ._md-chip-remove-container button.vegetablechip {
+      position: relative;
+      height: 24px;
+      width: 24px;
+      line-height: 30px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      transition: background 0.15s linear;
+      display: block; }
+      .chipsdemoBasicUsage .custom-chips md-chip ._md-chip-remove-container button.vegetablechip md-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(0.7);
+        color: white;
+        fill: white; }
+      .chipsdemoBasicUsage .custom-chips md-chip ._md-chip-remove-container button.vegetablechip:hover, .chipsdemoBasicUsage .custom-chips md-chip ._md-chip-remove-container button.vegetablechip:focus {
+        background: rgba(255, 0, 0, 0.8); }
+  .chipsdemoBasicUsage .custom-chips md-chip:not(.md-readonly) md-chip-template {
+    padding-right: 5px; }
+//image-holder
+.img-holder{
+  height: 80px;
+  width: 80px;
+  display: block;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.add-position{
+  .md-button.md-fab.md-fab-bottom-right {
+    right: 280px;
+    bottom: 50px;
+}
+}
+.pb50{
+  padding-bottom: 50px;
+}
+.login md-card {
+    margin: 50px auto;
+    width: 420px;
+    padding: 0 20px;
+}
+li.pagination-page.ng-scope.active a {
+    background: #0275d8;
+    color: white;
+}
+
+.search-input {
+  padding: 0px 10px;
+  input {
+    width: 25%;
+    padding: 10px;
+  }
+}
+.main-sec{
+  position: relative;
+}
+.pos-abs{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.w100{
+  width: 100%;
+}
+.main-img{
+  margin: 0px auto;
+
+}
+.w200{
+  width: 200px;
+}
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+*/
