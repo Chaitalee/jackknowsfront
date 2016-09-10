@@ -50,9 +50,19 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewBooking",
         subnav: []
     }, {
-        name: "Expert",
+        name: "All Experts",
         classis: "active",
         link: "#/page/viewExpert",
+        subnav: []
+    },{
+        name: "Approved Experts",
+        classis: "active",
+        link: "#/page/viewExpertApproved",
+        subnav: []
+    },{
+        name: "Unapproved Experts",
+        classis: "active",
+        link: "#/page/viewExpertUnapproved",
         subnav: []
     }, {
         name: "Need Help",
