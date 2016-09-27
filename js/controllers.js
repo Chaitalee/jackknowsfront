@@ -40,6 +40,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
+  $scope.back = function() {
+      window.history.back();
+  };
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -363,7 +366,7 @@ console.log('in if',findData.data);
         // CALL GENERAL API
         console.log($scope.formData);
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
-
+    window.history.back();
             console.log($scope.json.jsonPage);
 
             // showToast("Project Saved Successfully");

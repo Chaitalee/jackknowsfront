@@ -115,10 +115,10 @@
 
 <section class="md-whiteframe-z1 users pb50">
     <md-list ng-cloak>
-      <md-input-container ng-if="json.addSearch">
+      <!-- <md-input-container ng-if="json.addSearch">
     <label>Movies</label>
     <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
-      <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
+      <md-option  value="{{dropdown._id}}">
         {{dropdown.name}}
       </md-option>
     </md-select>
@@ -126,6 +126,19 @@
   <div class="search-input" ng-if="!json.addSearch">
     <input ng-model="search" type="text">
       <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+    </div> -->
+
+
+    <div class="" layout="row" layout-xs="column">
+        <div flex class="flex">
+            <!-- <md-subheader class="md-no-sticky layout-lg">{{json.title}}
+            </md-subheader> -->
+        </div>
+        <div flex class="flex search-bar">
+            <md-autocomplete md-search-text="pagination.search" md-items="result in json.tableData track by $index" md-min-length="0" md-search-text-change="getMoreResults();" placeholder="Search" class="layout-lg">
+            </md-autocomplete>
+        </div>
+
     </div>
   <!-- <md-autocomplete
               md-search-text="searchForm.name"
@@ -136,13 +149,13 @@
               ng-model='search'
               >
           </md-autocomplete> -->
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="add-position" ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification'">
                 <md-button class="md-fab md-primary md-mini" aria-label="Add Users">
                     <md-icon class="fa fa-plus plus-icon"></md-icon>
                 </md-button>
             </a>
-        </div>
+        </div> -->
         <md-subheader class="md-no-sticky">{{json.title}}
         </md-subheader>
         <md-divider></md-divider>

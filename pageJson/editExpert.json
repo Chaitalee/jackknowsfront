@@ -14,8 +14,8 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "Expert IsVerify",
-        "type": "select",
+        "name": "Expert Verification",
+        "type": "radio",
         "tableRef": "verifyExpert",
         "model": "verifyExpert",
         "id": "input3",
@@ -23,10 +23,10 @@
         "validation": ["required", "trim", "unique"],
         "url": [{
             "value": "true",
-            "name": "true"
+            "name": "Verify Expert"
         }, {
             "value": "false",
-            "name": "false"
+            "name": "Not Verify Expert"
         }]
     },{
         "name": "First Name",
