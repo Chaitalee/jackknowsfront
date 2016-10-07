@@ -29,6 +29,15 @@
             "name": "Not Verify Expert"
         }]
     },{
+        "name": "Reason for Verification",
+        "type": "text",
+        "tableRef": "reason",
+        "placeholder": "Enter Reason for Verification",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "reason"
+    },{
         "name": "First Name",
         "type": "text",
         "tableRef": "firstName",
@@ -111,7 +120,7 @@
         "model": "salesPitch"
     },{
         "name": "descriptionAndSkills",
-        "type": "text",
+        "type": "textarea",
         "tableRef": "descriptionAndSkills",
         "placeholder": "Enter Description And Skills",
         "id": "input4",
@@ -127,6 +136,13 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "specilization"
+    },{
+        "name": "Short Description",
+        "type": "textarea",
+        "tableRef": "shortDescription",
+        "placeholder": "Enter Specilization",
+        "id": "input4",
+        "model": "shortDescription"
     },{
         "name": "description",
         "type": "text",

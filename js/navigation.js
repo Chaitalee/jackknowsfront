@@ -1,7 +1,7 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://jacknows.wohlig.com/";
+// var adminurl = "http://jacknows.wohlig.com/";
 
-// var adminurl = "http://localhost/";
+var adminurl = "http://localhost/";
 // var adminurl = "http://chaitalee.com/";
 // var imgurl = "http://localhost:81/upload/";
 // var adminurl = "http://146.148.4.222/";
