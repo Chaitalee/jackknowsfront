@@ -126,7 +126,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             _.each($scope.json.fields, function(n) {
                 if (n.type == "selectFromTable") {
                     NavigationService.getDropDown(n.url, function(data) {
-                        console.log(data);
+                        console.log('*************************************',data);
                         n.dropdownvalues = [];
                         if (data) {
                             for (var i = 0; i < data.data.length; i++) {

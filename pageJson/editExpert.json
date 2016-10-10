@@ -154,12 +154,12 @@
         "model": "description"
     },{
         "name": "areaOfExpertise",
-        "type": "text",
+        "type": "selectFromTable",
         "tableRef": "areaOfExpertise",
         "placeholder": "Enter Area Of Expertise",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
+        "url": "category/getAll",
         "model": "areaOfExpertise"
     },{
         "name": "accountHolderAddress",
