@@ -19,6 +19,11 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/userView",
         subnav: []
+    },{
+      name: "Social Login Users",
+      classis: "active",
+      link: "#/page/userViewAuthLogin",
+      subnav: []
     }, {
         name: "Category",
         classis: "active",

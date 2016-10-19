@@ -15,7 +15,7 @@
         "model": "_id"
     }, {
         "name": "Query",
-        "type": "text",
+        "type": "textarea",
         "tableRef": "query",
         "placeholder": "Enter Query",
         "id": "input2",
@@ -32,8 +32,8 @@
         "url": "",
         "model": "callDuration"
     },{
-        "name": "CallTime",
-        "type": "datetime",
+        "name": "CallDate",
+        "type": "date",
         "tableRef": "callTime",
         "placeholder": "Enter CallTime",
         "id": "input4",
@@ -41,6 +41,15 @@
         "url": "",
         "model": "callTime"
     },{
+      "name": "CallTime",
+      "type": "time",
+      "tableRef": "callTime",
+      "placeholder": "Enter CallTime",
+      "id": "input4",
+      "validation": ["required", "trim", "unique"],
+      "url": "",
+      "model": "callTime"
+      },{
         "name": "Call Id",
         "type": "text",
         "tableRef": "callId",
@@ -76,7 +85,16 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "status"
-    }],
+    },{
+      "name": "Cancel Reason",
+      "type": "textarea",
+      "tableRef": "cancelReason",
+      "placeholder": "Enter CAncel Reason",
+      "id": "input4",
+      "validation": ["required", "trim", "unique"],
+      "url": "",
+      "model": "cancelReason"
+      }],
     "action": [{
         "name": "submit",
         "action": "submitUser"
